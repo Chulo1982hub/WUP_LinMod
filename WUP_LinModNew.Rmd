@@ -47,6 +47,13 @@ we have numerical responses (sim score) and Numerical explanatory variables (gri
 
 ### scatterplot
 
+```{r}
+plot(SIMS~ARM,data=data)
+```
+
+There is positive relationship between SIMS and ARMS.if this were perfect linear relationship, all the points would be on a straight line. The correlation between Sim and arm strength is .0.
+
+
 ### Numerical results
 
 
