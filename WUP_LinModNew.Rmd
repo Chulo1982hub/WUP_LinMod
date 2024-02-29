@@ -62,6 +62,12 @@ This summarizes the correlation between are strength ans Sim score being around.
 
 
 ### Inferential  (Build model.1)
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
+The P value for the coefficient of arm 0.0000000000000002
 
 #### Predict at target point
 
