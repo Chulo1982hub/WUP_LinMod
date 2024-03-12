@@ -78,9 +78,7 @@ print(SIMSpredict)
 
 The prediction for ARM = 88, and GRIP = 94 is .71
 
-
 #### scatterplot with model fit
-
 
 
  
@@ -106,9 +104,25 @@ The prediction for ARM = 88, and GRIP = 94 is .71
 
 ### Numerical results (cor)
 
+```{r}
+m = data.frame(data['GRIP'],data ['ARM'],data['SIMS'])
+cor(m)
+
+```
+
+The table shows that SIMS correlate with GRIP in a positive manner (0.64) and SIMS correlates with ARM also in positive manner,(0.69). This says these variables are useful in predicting SIMS
+
+```{r}
+plot(data$GRIP,data$ARM)
+```
+
+plot shows grip and arm are do not independent, so this is not necessarily a good model
+
 `
   
 ### Inferential  (Build 2-dimentional model.3)
+
+
 
 #### predict model.3 at target point
   
