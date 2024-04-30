@@ -90,7 +90,6 @@ The prediction for ARM = 88, and GRIP = 94 is .71
 
 ```{r}
 plot(SIMS~GRIP,data=data)
-abline(model.2, col= "green")
 ```
 
 If both ARM and GRIP are significant predictors (low p-values) with positive coefficients, it would suggest that higher values of ARM and/or GRIP are associated with higher values of the response variable
