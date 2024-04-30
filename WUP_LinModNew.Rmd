@@ -62,6 +62,7 @@ This summarizes the correlation between are strength ans Sim score being around.
 
 
 ### Inferential  (Build model.1)
+
 ```{r}
 model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
@@ -87,16 +88,45 @@ The prediction for ARM = 88, and GRIP = 94 is .71
 
 ### Now add in scatterplot
 
+```{r}
+plot(SIMS~GRIP,data=data)
+abline(model.2, col= "green")
+```
+
+If both ARM and GRIP are significant predictors (low p-values) with positive coefficients, it would suggest that higher values of ARM and/or GRIP are associated with higher values of the response variable
+
 
 ### Numerical results 
 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+
+The value 0.6398458 indicates a moderately strong positive linear relationship between SIMS and GRIP.
+
 
 ### Inferential  (Build model.2)
+
+
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```
   
+
+The linear regression model suggests a significant relationship between ARMS And GRIP.
 
 #### predict model.2 at target point
 
+```{r}
+SIMSpredict = predict.lm(model.2, newdata = data.frame(ARM = 88, GRIP = 94), interval = "confidence")
+print(SIMSpredict)
+```
+
 #### now add the model fit to our plot for model.2
+
+
+
   
 
 
@@ -148,6 +178,13 @@ anova(model.1,model.3)
 p-value 0.00000499, this is less than 0.05 so we conclude that model.3 is better than model.1 
 
 ### Model.2 vs Model.3
+
+```{r}
+anova(model.2,model.3)
+```
+
+
+based on this analysis, we conclude that including the predictor variable ARM in the model along with GRIP leads to a significantly better model for predicting SIMS compared to using GRIP alone.
 
 ## Informally compare Model.1 with model.2
 
